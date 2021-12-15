@@ -1,0 +1,89 @@
+ /*
+ input[type=checkbox],
+ input[type=color],
+ input[type=date],
+ input[type=datetime-local],
+ input[type=datetime],
+ input[type=email],
+ input[type=month],
+ input[type=number],
+ input[type=password],
+ input[type=radio],
+ input[type=search],
+ input[type=tel],
+ input[type=text],
+ input[type=time],
+ input[type=url],
+ input[type=week],
+ select,
+ textarea {
+   border: none !important;
+   box-shadow: none !important;
+   background-color: #fff;
+   color: #32373c;
+   outline: 0;
+   transition: none !important;
+ }
+ */
+
+ #app {
+   padding-right: 20px;
+ }
+
+ #app .v-tabs input {
+   border: none !important;
+   box-shadow: none !important;
+   /* background-color: #fafafa; */
+   color: #32373c;
+   outline: 0;
+   transition: none !important;
+ }
+
+ #app .v-tabs .v-active-title {
+   align-self: center;
+   font-size: 18px !important;
+ }
+
+ #app .v-tabs__item:first-child {
+   padding-left: 24px !important;
+ }
+
+ #app #inspire {
+   height: 450px !important;
+   /* height: 100% !important; */
+   background-color: transparent;
+ }
+
+ #app .btn_app_save {
+   margin-left: 0px !important;
+   margin-top: 15px !important;
+ }
+
+ #app .v-btn__content {
+
+   color: #fff;
+ }
+
+ #app #preloader {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: #fff;
+   z-index: 999;
+   opacity: 1;
+ }
+
+ #app #admitad_text,
+ #app #actionpay_text {
+   box-shadow: 0 0 0 #fff;
+ }
+
+ #app #admitad_text:focus,
+ #app #actionpay_text:focus {
+   border-color: #fff;
+   box-shadow: 0 0 0 #fff;
+ }
+
+ #app .color_picker .v-expansion-panel-content__wrap {
+   padding-top: 16px;
+ }

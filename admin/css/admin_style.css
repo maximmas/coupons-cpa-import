@@ -1,0 +1,26 @@
+  input#coupon_date_end,
+  input#coupon_date_start {
+    display: block !important;
+  }
+
+  .cci_settings {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .ui-tabs ul li a {
+    box-shadow: none;
+  }
+
+  .input-text-wrap input.cci-admin-long-input {
+    margin-left: 0.5em;
+  }
+
+  input.cci-admin-checkbox#coupon_prolong {
+    margin-left: 1em;
+  }
+
+  @media screen and (max-width: 782px) {
+    .input-text-wrap input.cci-admin-long-input {
+      margin-left: 0em;
+    }
+  }

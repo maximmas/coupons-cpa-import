@@ -1,0 +1,263 @@
+<div id="app">
+  <div id="preloader"></div>
+  <v-app id="inspire">
+    <h2 class="font-weight-regular title">Настройки Coupons CPA Import</h2>
+    <v-content>
+      <v-tabs fixed-tabs v-model="active" dark background-color="blue-grey darken-2" slider-color="pink accent-3">
+
+        <v-tab v-for="menu_item in options.menu_items" :key="menu_item" ripple>
+          <span class="">{{ menu_item }}</span>
+        </v-tab>
+
+        <v-tab-item>
+          <v-container fluid>
+
+            <v-layout wrap align-center>
+              <v-flex xs7 d-flex>
+                <v-text-field label="Заголовок секции" v-model="options.active_title" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+              <v-flex xs7 d-flex>
+                <v-text-field label="SEO-заголовок страницы" v-model="options.seo_title" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+            <v-layout wrap align-center>
+
+              <v-flex xs7 d-flex>
+                <v-text-field label="Шорткод для модального окна" v-model="options.modal_shortcode" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+              <v-flex xs7 d-flex>
+                <v-slider label="Сколько купонов показывать?" v-model="options.active_show" step="1" :max="show_max"
+                  :min="show_min" thumb-label="always" :thumb-size="25" ticks>
+                </v-slider>
+              </v-flex>
+            </v-layout>
+
+
+          </v-container>
+        </v-tab-item>
+
+        <v-tab-item>
+          <v-container fluid>
+
+            <v-layout wrap align-center>
+
+              <v-flex xs7 d-flex>
+                <v-text-field label="Заголовок секции" v-model="options.archive_title" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+              <v-flex xs4 d-flex>
+                <v-slider label="Сколько купонов показывать?" v-model="options.archive_show" step="1"
+                  thumb-label="always" ticks :max="show_max" :min="show_min" :thumb-size="25">
+                </v-slider>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+
+              <v-flex xs4 d-flex>
+                <v-slider label="Сколько купонов загружать?" v-model="options.archive_load" step="1" :max="show_max"
+                  :min="show_min" :thumb-size="25" thumb-label="always" ticks>
+                </v-slider>
+              </v-flex>
+            </v-layout>
+
+          </v-container>
+        </v-tab-item>
+
+        <v-tab-item>
+          <v-container fluid>
+
+            <v-layout wrap align-center>
+              <v-flex xs7 d-flex>
+                <v-text-field label="Выгрузка Admitad XML" v-model="options.admitad_xml" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+              <v-flex xs7 d-flex>
+                <v-text-field label="XML-выгрузка Actionpay" v-model="options.actionpay_xml" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+
+              <v-flex xs7 d-flex>
+                <v-textarea label="Текст купона Admitad" v-model="options.admitad_text" auto-grow outlined
+                  id="admitad_text" clearable></v-textarea>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+
+              <v-flex xs7 d-flex>
+                <v-textarea label="Текст купона Actionpay" v-model="options.actionpay_text" auto-grow outlined
+                  id="actionpay_text" clearable></v-textarea>
+              </v-flex>
+            </v-layout>
+
+          </v-container>
+        </v-tab-item>
+
+        <v-tab-item>
+          <v-container fluid>
+
+            <v-layout wrap align-center>
+              <v-flex xs4 d-flex>
+                <v-switch inset v-model="options.advert_to_show" label="Выводить рекламный блок?"></v-switch>
+                </v-switch>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+              <v-flex xs4 d-flex>
+                <v-slider :disabled="!options.advert_to_show" label="После какого купона показывать?" v-model="where_ad"
+                  step="1" :max="ad_max" :min="ad_min" thumb-label="always" :thumb-size="25" ticks>
+                </v-slider>
+              </v-flex>
+            </v-layout>
+
+            <v-layout wrap align-center>
+              <v-flex xs7 d-flex>
+                <v-text-field label="Шорткод для рекламного блока" v-model="options.adv_shortcode" clearable>
+                </v-text-field>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-tab-item>
+
+        <v-tab-item>
+          <v-layout wrap align-center>
+
+            <v-expansion-panels class="mb-6" focusable multiple>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down" v-bind:style="{ color: options.color_base }">
+                  Базовый цвет
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_base" mode="hexa" @input="baseColor">
+                  </v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down">
+                  Цвет фона секций
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_section_bg" mode="hexa"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down">
+                  Цвет фона одинарного купона
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_single_bg" mode="hexa"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down" v-bind:style="{ color: options.color_promocode }">
+                  Цвет купона промокода</v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_promocode" mode="hexa">
+                  </v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down" v-bind:style="{ color: options.color_action }">
+                  Цвет купона акции
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_action" mode="hexa"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down" v-bind:style="{ color: options.color_gift }">
+                  Цвет купона подарка
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_gift" mode="hexa"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down" v-bind:style="{ color: options.color_delivery }">
+                  Цвет купона доставки
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_delivery" mode="hexa">
+                  </v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down" v-bind:style="{ color: options.color_button }">
+                  Цвет кнопки
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_button" mode="hexa"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down"
+                  v-bind:style="{ color: options.color_button_back }">Цвет обратной стороны кнопки
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker v-model="options.color_button_back" mode="hexa"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down"
+                  v-bind:style="{ color: options.color_menu_active }">Цвет активного меню
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker mode="hexa" v-model="options.color_menu_active"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down"
+                  v-bind:style="{ color: options.color_modal_action }">Цвет кнопки 'Копировать' в модальном окне
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker mode="hexa" v-model="options.color_modal_action"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header expand-icon="mdi-menu-down"
+                  v-bind:style="{ color: options.color_modal_goto }">Цвет кнопки 'Перейти' в модальном окне
+                </v-expansion-panel-header>
+                <v-expansion-panel-content class="color_picker">
+                  <v-color-picker mode="hexa" v-model="options.color_modal_goto"></v-color-picker>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
+          </v-layout>
+        </v-tab-item>
+      </v-tabs>
+      <v-btn @click="onSave" :disabled="is_saving" tile color="blue darken-4" class="btn_app_save">Сохранить</v-btn>
+    </v-content>
+  </v-app>
+</div>

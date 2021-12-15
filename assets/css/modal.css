@@ -1,0 +1,662 @@
+/* общие стили */
+.mfp-close {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+}
+
+#cci-modal .modal-backdrop.in {
+  z-index: auto;
+}
+
+.modal_container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+#cci_modal .coupon_item {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: auto;
+  width: 100%;
+  padding: 10px 5px;
+  position: relative;
+  margin: 0px auto 0px auto;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  /* background: #fff; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+#cci_modal .coupon_item_right {
+  display: none;
+}
+#cci_modal .coupon_item_center {
+  flex-grow: 1;
+  min-width: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px 10px 10px 0px;
+  position: relative;
+  border-right:none;
+
+
+}
+
+#cci_modal .coupon_item_center::after,
+#cci_modal .coupon_item_center::before{
+  display: none;
+}
+
+#cci_modal .coupon_item_center--title {
+  display: flex !important;
+  cursor: pointer;
+  color: #383838;
+  /* max-width: 99%;
+  width: 99%; */
+  word-wrap: break-word;
+  font-weight: 600;
+  margin: 0 0 5px 0px;
+  padding: 0;
+  overflow: hidden;
+  line-height: 1.4em;
+  font-size: 1.4em;
+  max-height: 2.8em;
+  font-family: "roboto", sans-serif;
+
+
+}
+
+#cci_modal .coupon_item_center--title--rest {
+  display: none;
+}
+
+#cci_modal .coupon_item_center--desciption {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#cci_modal .coupon_item_center--toggle {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.9em;
+  color: #bbb;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.35;
+  height: 1.35;
+  font-size: 100%;
+}
+
+#cci_modal .coupon_item_bottom {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+#cci_modal .coupon_item_bottom--counter {
+  display: none;
+  width: 570px;
+  text-align: right;
+  margin-right: 40px;
+  line-height: 13px;
+  font-family: "roboto", sans-serif;
+  color: #7C7878;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+#cci_modal .coupon_item_bottom--term {
+  /* display: none; */
+}
+
+#cci_modal .coupon_item_center--content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #484545;
+  font-family: "roboto", sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  height: auto;
+  line-height: 1.35;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .3px;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+#cci_modal .coupon_item_center--excerpt {
+  line-height: 1.35em;
+  max-height: 2.7em;
+}
+
+#cci_modal .coupon_item_center--excerpt.expanded {
+  max-height: none;
+}
+
+#cci_modal .coupon_item_center--toggle {
+  margin-left: 5px;
+}
+
+#cci_modal .modal_code--value.modal-value-noaction{
+  width: 100%;
+  font-size: 1.9rem;
+}
+
+#cci_modal .coupon_item_left {
+  /* background-color: #547ED3; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 103px;
+  min-width: 103px;
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  /* background-color: #fff; */
+}
+
+#cci_modal .coupon_item_left_clickable {
+  cursor: pointer;
+  width: 103px;
+  min-width: 103px;
+
+  box-sizing: content-box;
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "roboto", sans-serif;
+}
+
+#cci_modal .coupon_item_left--discount {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1;
+
+}
+
+.modal_disount_size {
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#cci_modal .coupon_item_left--discount i {
+  font-size: 0.75em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#cci_modal .coupon_item_left--discount i.fa-dollar-sign {
+  font-size: 0.8em;
+}
+
+#cci_modal .coupon_item_left--icon {
+  text-align: center;
+}
+
+#cci_modal .coupon_item_left--icon.no_value .ic-car,
+#cci_modal .coupon_item_left--icon.no_value .ic-gift {
+  font-size: 55px;
+}
+
+#cci_modal .coupon_item_left--icon.no_value .ic-sale {
+  font-size: 60px;
+}
+
+#cci_modal .coupon_item_left--icon.no_value .ic-coupon {
+  font-size: 50px;
+}
+
+#cci_modal .coupon_item_left--type {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #858985;
+  color: #fff;
+  width: 80px;
+  text-transform: uppercase;
+  text-align: center;
+  /* -webkit-border-radius: 3px;
+  border-radius: 3px; */
+  padding: 1.5px 0;
+}
+
+#cci_modal .coupon_item #cci_modal .coupon_item_bottom {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+#cci_modal .coupon_item_bottom--counter {
+  width: 570px;
+  text-align: right;
+  margin-right: 40px;
+  line-height: 13px;
+  font-family: "roboto", sans-serif;
+  color: #7C7878;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+
+.modal_action {
+  background-color: #F2F3F5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.modal_action_wrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.modal_code_container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 400;
+  /* margin-top: 20px; */
+  margin-bottom: 10px;
+  /* font-size: 16px; */
+  text-align: center;
+}
+.modal_subtitle {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.3em;
+  line-height: 1.3rem;
+  color: #3D3D3F;
+  /* background-color: green; */
+  margin-bottom: 15px;
+}
+
+.modal_code--value {
+  width: 50%;
+  border: 1px solid #858985;
+  -webkit-border-radius: 2px 0 0 2px;
+  border-radius: 2px 0 0 2px;
+  border-color: #e6e6e6;
+  color: #7C7878;
+  margin: auto;
+  color: #111;
+  background-color: #fff;
+  padding: 10px 0;
+  height: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.modal_code--action {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #858985;
+  -webkit-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  background-color: #2B66C0;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  height: 35px;
+  padding: 10px 0;
+  margin: auto;
+  /* font-size: 1.2em; */
+  font-size: 1.4rem;
+}
+
+ .modal_code--action.copied {
+  background-color: #15458E !important;
+}
+
+ .modal_code--action:hover {
+  border-color: #15458E;
+  background-color: #15458E;
+  -webkit-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+}
+.modal_code--action i {
+  margin-right: 10px;
+}
+
+ .modal_goto {
+    background-color: #2B66C0;
+    /* width: 33%; */
+    /* width: 70%; */
+    width: 100%;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    height: 35px;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    /* margin: 15px 0; */
+}
+
+ .modal_goto a {
+  color: #fff !important;
+    font-size: 1.4rem;
+}
+
+ .modal_goto:hover {
+  background-color: #15458E;
+  -webkit-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+}
+
+@media screen and (min-width: 1200px) {
+/*
+  .modal_container .modal_code_container .modal_code--value {
+    margin: 0;
+    border-right: none;
+  }
+
+  .modal_container .modal_code_container .modal_code--action {
+    margin: 0;
+    border-left: none;
+  } */
+}
+
+/* @media screen and (min-width: 768px) and (max-width: 991.98px) { */
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+/*
+
+  .modal_container .modal_goto {
+    font-size: 0.9em;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .modal_container .modal_code_container .modal_code--action {
+    font-size: 0.9em;
+  }
+
+  .modal_container .modal_code_container .modal_code--value {
+    width: 50%;
+    font-size: 0.9em;
+  } */
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 575.98px) {
+  /* .white-popup {
+    width: 95% !important;
+  }
+
+  .modal_container {
+    width: 450px;
+    padding: 15px 25px;
+  }
+
+  .modal_container .modal_code_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .modal_container .modal_code_container .modal_code--action {
+    width: inherit;
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+
+  .modal_container .modal_code_container .modal_code--action i {
+    display: none;
+  }
+
+  .modal_container .modal_code_container .modal_code--value {
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  .modal_container .modal_code_container.copied i {
+    display: none;
+  }
+
+  .modal_container .modal_goto {
+    font-size: 0.9em;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  } */
+}
+
+@media screen and (min-width: 320px) and (max-width: 479.98px) {
+/*
+  .modal_container {
+    width: 90%;
+    padding: 15px 5px;
+  }
+
+  .modal_container .modal_goto {
+    width: 70%;
+    font-size: 0.9em;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .modal_container .modal_code_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .modal_container .modal_code_container .modal_code--action {
+    width: 50%;
+    width: 100%;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+
+  .modal_container .modal_code_container .modal_code--action i {
+    display: none;
+  }
+
+  .modal_container .modal_code_container .modal_code--value {
+    width: 65%;
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  .modal_container .modal_code_container.copied i {
+    display: none;
+  } */
+}
+
+@media screen and (max-width: 319.98px) {
+/*
+  .modal_container {
+    width: 100%;
+    padding: 15px 15px;
+  }
+
+  .modal_container .modal_goto {
+    width: 100%;
+    font-size: 0.9em;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .modal_container .modal_code_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .modal_container .modal_code_container .modal_code--action {
+    width: 50%;
+    width: 100%;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+
+  .modal_container .modal_code_container .modal_code--action i {
+    display: none;
+  }
+
+  .modal_container .modal_code_container .modal_code--value {
+    width: 65%;
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  .modal_container .modal_code_container.copied i {
+    display: none;
+  } */
+}

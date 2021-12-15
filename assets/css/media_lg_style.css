@@ -1,0 +1,45 @@
+  .coupons_active_container,
+  .coupons_expired_container {
+    width: 940px;
+    padding: 0px 15px;
+    width: 100%;/**************/
+    /* box-sizing: content-box; */
+    box-sizing: border-box;
+
+    /* background-color: yellow; */
+  }
+  .coupons_active_container .coupon_item_right .coupon_item_right--button,
+  .coupons_expired_container .coupon_item_right .coupon_item_right--button{
+    text-transform: none !important; /**************/
+  }
+  .coupon_item_right--arrow {
+    display: none;
+  }
+
+  .coupon_item .coupon_item_center {
+     width: 100%;/**************/
+  }
+  .coupons_active_container .coupon_item_left .coupon_item_left_clickable,
+  .coupons_expired_container .coupon_item_left .coupon_item_left_clickable{
+    box-sizing: content-box;/**************/
+  }
+/*
+  .modal_container .modal_code_container .modal_code--value {
+    width: 320px;
+    margin: 0;
+    border-right: none;
+  }
+  .modal_container .modal_code_container .modal_code--action {
+    width: 180px;
+    margin: 0;
+    border-left: none;
+  }
+*/
+  .coupons_active_container .coupon_item_right .coupon_item_right--container{
+    height: 100%;/**************/
+  }
+  .coupons_active_container .coupon_item_right .coupon_item_right--container .coupon_item_right--button{
+    display: flex !important;/**************/
+    justify-content: center;/**************/
+    align-items: center;/**************/
+  }
