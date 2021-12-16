@@ -11,8 +11,7 @@
 add_action( 'admin_menu', 'cci_create_settings_menu' );
 function cci_create_settings_menu()
 {
-    // add_plugins_page( 'Coupons CPA Import настройки', 'Coupons CPA Import настройки', 'manage_options', 'cci_setup', 'cci_setup_page' );
-    add_options_page( 'Coupons CPA Import', 'Coupons CPA Import', 'manage_options', 'cci_setup', 'cci_setup_page' );
+        add_options_page( 'Coupons CPA Import', 'Coupons CPA Import', 'manage_options', 'cci_setup', 'cci_setup_page' );
     add_action( 'admin_init', 'cci_register_settings' );
 };
 
